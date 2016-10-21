@@ -1,44 +1,23 @@
+ 
+![alt text](http://i.imgur.com/gXAqCye.png?1 "CM Logo")
+
+
 # CURRENT STATUS: FAILS ON BUILD
 
-This is the error that comes when trying to build:
+###List of errors I get with commands entered:
 
-```
-In file included from android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/api.cc:48:
-In file included from android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/parser.h:36:
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/preparser.h:615:32: warning: unused parameter 'token' [-Wunused-parameter]
-  void Consume(i::Token::Value token) { Next(); }
-                               ^
-In file included from android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/api.cc:54:
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/scanner-character-streams.h:108:30: warning: unused parameter 'character' [-Wunused-parameter]
-  virtual void PushBack(uc32 character) {
-                             ^
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/scanner-character-streams.h:115:45: warning: unused parameter 'delta' [-Wunused-parameter]
-  virtual unsigned SlowSeekForward(unsigned delta) {
-                                            ^
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/api.cc:151:64: warning: unused parameter 'take_snapshot' [-Wunused-parameter]
-void i::V8::FatalProcessOutOfMemory(const char* location, bool take_snapshot) {
-                                                               ^
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/api.cc:394:48: warning: unused parameter 'compressed_data' [-Wunused-parameter]
-void V8::GetCompressedStartupData(StartupData* compressed_data) {
-                                               ^
-android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/api.cc:425:50: warning: unused parameter 'decompressed_data' [-Wunused-parameter]
-void V8::SetDecompressedStartupData(StartupData* decompressed_data) {
-                                                 ^
-149 warnings and 2 errors generated.
-build/core/binary.mk:730: recipe for target '/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/mksnapshot.arm_intermediates/src/assembler.o' failed
-make: *** [/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/mksnapshot.arm_intermediates/src/assembler.o] Error 1
-161 warnings and 2 errors generated.
-build/core/binary.mk:730: recipe for target '/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/mksnapshot.arm_intermediates/src/api.o' failed
-make: *** [/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/mksnapshot.arm_intermediates/src/api.o] Error 1
-make: *** wait: No child processes.  Stop.
-```
+`brunch cm_m1-userdebug` ERROR: http://pastebin.com/2mdw4ahk
 
-And when trying to use make -k, I get (after 4 hours of compiling):
 
-```
-Export includes file: packages/inputmethods/LatinIME/native/jni/HostUnitTests.mk -- /home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/liblatinime_host_unittests_intermediates/export_includes
-host Executable: liblatinime_host_unittests (/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/liblatinime_host_unittests_intermediates/liblatinime_host_unittests)
-make: Target 'droid' not remade because of errors.
-```
+`m -j4` ERROR: http://pastebin.com/7D5ic4dp
 
-Currently attempting make -w.
+
+`make -k` ERROR: http://pastebin.com/XYEFB57X
+
+
+
+
+
+
+
+Not sure what others to try...
