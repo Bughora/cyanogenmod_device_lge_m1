@@ -4,20 +4,27 @@
 
 # CURRENT STATUS: FAILS ON BUILD
 
-###List of errors I get with commands entered:
+### I'm getting this error ad Im not sur ehow to fix it.
 
-`brunch cm_m1-userdebug` ERROR: http://pastebin.com/2mdw4ahk
+```
+android/vendor/lge/external/webkit/htmlwebkit/Source/ThirdParty/v8/src/arm/assembler-arm-inl.h:287:12: error: cast from pointer to smaller type 'int32_t' (aka 'int') loses information
+  imm32_ = reinterpret_cast<int32_t>(f.address());
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+and I tried changing
+```
+imm32_ = reinterpret_cast<int32_t>(f.address());
+```
+to
+```
+imm32_ = reinterpret_cast<int32_t*>(f.address());
+```
+and 
+```
+imm32_ = reinterpret_cast<int>(f.address());
+```
 
-
-`m -j4` ERROR: http://pastebin.com/7D5ic4dp
-
-
-`make -k` ERROR: http://pastebin.com/XYEFB57X
-
-
-
-
-
+with no luck.
 
 
 Not sure what others to try...
