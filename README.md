@@ -32,3 +32,13 @@ build/core/binary.mk:730: recipe for target '/home/sven/android/system/out/host/
 make: *** [/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/mksnapshot.arm_intermediates/src/api.o] Error 1
 make: *** wait: No child processes.  Stop.
 ```
+
+And when trying to use make -k, I get (after 4 hours of compiling):
+
+```
+Export includes file: packages/inputmethods/LatinIME/native/jni/HostUnitTests.mk -- /home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/liblatinime_host_unittests_intermediates/export_includes
+host Executable: liblatinime_host_unittests (/home/sven/android/system/out/host/linux-x86/obj/EXECUTABLES/liblatinime_host_unittests_intermediates/liblatinime_host_unittests)
+make: Target 'droid' not remade because of errors.
+```
+
+Currently attempting make -w.
